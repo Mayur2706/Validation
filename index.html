@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>stu form</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/db478ce198.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <form method="" action="" name="form" onsubmit="return validate()">
+        <h1>Student registration form</h1>
+
+        <div class="input-group">
+          <label class="label" for="firstname">First name</label>
+          <input
+            id="firstname"
+            type="text"
+            placeholder="Enter the first name"
+            onkeyup="validatefirstname()"
+          />
+          <!-- <label id="fname">(max 30 charater a-z and A-Z)</label> -->
+          <span id="firstname-error"></span>
+        </div>
+        <div class="input-group">
+          <label class="label" for="lastname">Last name</label>
+          <input
+            type="text"
+            placeholder="Enter the last name"
+            id="lastname"
+            onkeyup="validatelastname()"
+          />
+
+          <!-- <label id="fname">(max 30 charater a-z and A-Z)</label> -->
+          <span id="lastname-error"></span>
+        </div>
+
+        <div class="input-group">
+          <label class="label" for="birthdate">Date of Birth</label>
+
+          <select class="birth" id="day" onkeyup="validateday()">
+            <option value="day">Days</option>
+            <option value="day">1</option>
+            <option value="day">2</option>
+            <option value="day">3</option>
+            <option value="day">4</option>
+            <option value="day">5</option>
+            <option value="day">6</option>
+            <option value="day">7</option>
+            <option value="day">8</option>
+            <option value="day">9</option>
+            <option value="day">10</option>
+            <option value="day">11</option>
+            <option value="day">12</option>
+            <option value="day">13</option>
+            <option value="day">14</option>
+            <option value="day">15</option>
+            <option value="day">16</option>
+            <option value="day">17</option>
+            <option value="day">18</option>
+            <option value="day">19</option>
+            <option value="day">20</option>
+            <option value="day">21</option>
+            <option value="day">22</option>
+            <option value="day">23</option>
+            <option value="day">24</option>
+            <option value="day">25</option>
+            <option value="day">26</option>
+            <option value="day">27</option>
+            <option value="day">28</option>
+            <option value="day">29</option>
+            <option value="day">30</option>
+            <option value="day">31</option>
+          </select>
+          <span id="day-error"></span>
+          <select class="birth" id="month">
+            <option value="month">Month</option>
+            <option value="January">Jan</option>
+            <option value="February">Feb</option>
+            <option value="March">Mar</option>
+            <option value="April">Apr</option>
+            <option value="May">May</option>
+            <option value="June">Jun</option>
+            <option value="July">Jul</option>
+            <option value="August">Aug</option>
+            <option value="September">Sep</option>
+            <option value="October">Oct</option>
+            <option value="November">Nov</option>
+            <option value="December">Dec</option>
+          </select>
+
+          <select class="birth" id="year">
+            <option value="year">year</option>
+            <option value="year">1990</option>
+            <option value="year">1991</option>
+            <option value="year">1992</option>
+            <option value="year">1993</option>
+            <option value="year">1994</option>
+            <option value="year">1995</option>
+            <option value="year">1996</option>
+            <option value="year">1997</option>
+            <option value="year">1998</option>
+            <option value="year">1999</option>
+            <option value="year">2000</option>
+            <option value="year">2001</option>
+            <option value="year">2002</option>
+            <option value="year">2003</option>
+            <option value="year">2004</option>
+            <option value="year">2005</option>
+            <option value="year">2006</option>
+            <option value="year">2007</option>
+            <option value="year">2008</option>
+            <option value="year">2009</option>
+            <option value="year">2010</option>
+            <option value="year">2011</option>
+            <option value="year">2012</option>
+            <option value="year">2013</option>
+            <option value="year">2014</option>
+            <option value="year">2015</option>
+            <option value="year">2016</option>
+            <option value="year">2017</option>
+            <option value="year">2018</option>
+            <option value="year">2019</option>
+            <option value="year">2020</option>
+            <option value="year">2021</option>
+            <option value="year">2022</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label class="label" for="email">email</label>
+          <input
+            type="email"
+            placeholder="Enter the email"
+            id="email"
+            onkeyup="validateemail()"
+          />
+
+          <span id="email-error"></span>
+        </div>
+        <div class="input-group">
+          <label class="label" for="">Mobile number</label>
+          <input
+            type="text"
+            placeholder="Enter the mobile number"
+            id="phonenumber"
+            onkeyup="validatephone()"
+          />
+          <!-- <label for="phone">(10 digit number)</label> -->
+
+          <span id="phonenumber-error"></span>
+        </div>
+        <div class="input-group">
+          <label class="label" for="">Gender</label>
+
+          <div class="gender">
+            <input type="radio" placeholder="" id="gender" name="gender" />
+            <label for="">Male</label>
+
+            <input type="radio" placeholder="" id="gender" name="gender" />
+            <label for="">Female</label>
+            <input type="radio" placeholder="" id="gender" name="gender" />
+            <label for="">Other</label>
+          </div>
+
+          <span id="gender-error"></span>
+        </div>
+        <div class="input-group">
+          <label class="label" for="">Address</label>
+          <textarea
+            type="address"
+            placeholder=""
+            id="address"
+            onkeyup="validateaddress()"
+          ></textarea>
+
+          <span id="address-error"></span>
+        </div>
+        <div class="input-group">
+          <label class="label" for="">State</label>
+          <input
+            id="state"
+            onkeyup="validatestate()"
+            type="text"
+            placeholder=""
+          />
+
+          <span id="state-error"></span>
+        </div>
+        <div class="input-group">
+          <label class="label" for="">City</label>
+          <input
+            type="text"
+            placeholder=""
+            id="city"
+            onkeyup="validatecity()"
+          />
+
+          <span id="city-error"></span>
+        </div>
+        <div class="input-group">
+          <label class="label" for="">pincode</label>
+          <input
+            type="number"
+            placeholder=""
+            id="pincode"
+            onkeyup="validatepincode()"
+          />
+
+          <span id="pincode-error"></span>
+        </div>
+
+        <div class="input-group">
+          <label class="label">Hobbies</label>
+
+          <div class="hobbies">
+            <input type="radio" id="hobbies" value="a" />
+            <labe class="labe">Drawing</labe>
+            <input type="radio" id="hobbies" />
+            <labe class="labe">Singing</labe>
+            <input type="radio" id="hobbies" />
+            <labe class="labe">Dancing</labe>
+            <input type="radio" id="hobbies" />
+            <label id="fname"></label>
+            <labe>Cricket</labe>
+            <div class="others">
+              <input type="text" />
+              <input type="radio" id="hobbies" />
+              <labe>Others</labe>
+            </div>
+
+            <span id="hobbies-error"></span>
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="label" for="">Qualification</label>
+          <div class="table">
+            <table>
+              <thead>
+                <tr>
+                  <td>Sr.no</td>
+                  <td>Examination</td>
+                  <td>Board</td>
+                  <td>percentage</td>
+                  <td>year of passing</td>
+                </tr>
+              </thead>
+              <tmain>
+                <tr>
+                  <td class="bold">1</td>
+                  <td class="bold">Class X</td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                </tr>
+                <tr>
+                  <td class="bold">2</td>
+                  <td class="bold">Class XII</td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                </tr>
+                <tr>
+                  <td class="bold">3</td>
+                  <td class="bold">Graduation</td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                </tr>
+                <tr>
+                  <td class="bold">4</td>
+                  <td class="bold">masters</td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                </tr>
+              </tmain>
+            </table>
+          </div>
+          <span id="table-error"></span>
+        </div>
+
+        <div class="input-group">
+          <label class="label" for="gen">Courses applied for</label>
+          <div class="course">
+            <input type="radio" value="gen" id="course" name="course" />
+            <labe class="labe">BCA</labe>
+            <input type="radio" value="gen" id="course" name="course" />
+            <labe class="labe">B.com</labe>
+            <input type="radio" value="gen" id="course" name="course" />
+            <labe class="labe">B.sc</labe>
+            <input type="radio" value="gen" id="course" name="course" />
+            <labe class="labe">B.A</labe>
+          </div>
+          <span id="course-error"></span>
+        </div>
+
+        <div class="button">
+          <!-- <input
+            class="btn"
+            type="submit"
+            value="submit"
+            onclick="return Validate()"
+          /> -->
+          <button class="btn" onclick="return validate()">Submit</button>
+          <button class="btn">Reset</button>
+
+          <!-- <input type="submit" name="submit" value="Submit" />
+          <input type="reset" name="reset" value="Reset" /> -->
+          <span id="submit-error"></span>
+        </div>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
